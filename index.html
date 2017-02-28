@@ -88,10 +88,10 @@
                     <div class="intro-text">
                         <!--<span class="name">Nancy 和 Jay</span>-->
                         <hr class="star-light">
-                        <span class="name">欢迎来到我们的小屋！<br> 我们已经在一起<br>3年</span>
+                        <span class="name">欢迎来到我们的小屋！<br> 我们已经在一起</span>
+	<span class="name" id="currentYear"></span>		    
+        <span class="name" id="currentTime"></span>
 			    
-        <span class="name" id="currentTime"> 啦！</span>
-			    <span class="name">啦！</span>
         		
                     </div>
                 </div>
@@ -503,6 +503,7 @@ var duoshuoQuery = {short_name:"nancyjay"};
           dateobj.innerHTML = datestr;
           //var hours,minutes,seconds,timestr;
           var timeobj = document.getElementById("currentTime");
+	  var yearobj = document.getElementById("currentYear");
           var tz = current.getTimezoneOffset() / -60;
           function flushtime() {
             	var endtime = new Date(2013, 3, 9, 22, 13, 14).getTime();//取结束日期(毫秒值)
@@ -512,18 +513,21 @@ var duoshuoQuery = {short_name:"nancyjay"};
     		var minutes = Math.floor(seconds / 60);
     		var hours = Math.floor(minutes / 60);
     		var days = Math.floor(hours / 24) +31;
-		// var years = Math.floor(days / 365);
+		var years = Math.floor(days / 365);
     		var CDay = days % 365;
    		var CHour = (hours) % 24;
    		var CMinute = minutes % 60;
    		var CSecond = Math.floor(seconds % 60);//"%"是取余运算，可以理解为60进一后取余数，然后只要余数。
 		 
-            timestr = CDay + '天' + CHour + '小时' + CMinute + '分钟' + CSecond + '秒';
+            timestr = CDay + '天' + CHour + '小时' + CMinute + '分钟' + CSecond + '秒啦！';
+	    timestr2 = years + '年';
 
             timeobj.innerHTML = timestr;
+	    yearobj.innerHTML = timestr2;
           }
           flushtime();
           timeobj.innerHTML = timestr;
+	  yearobj.innerHTML = timestr2;
           setInterval(function() {flushtime();},1000);
           document.getElementById("datearea").style.display = "inline-block";
           document.getElementById("noscript").style.display = "none";
