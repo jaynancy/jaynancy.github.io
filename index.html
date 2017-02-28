@@ -519,8 +519,8 @@ var duoshuoQuery = {short_name:"nancyjay"};
    		var CMinute = minutes % 60;
    		var CSecond = Math.floor(seconds % 60);//"%"是取余运算，可以理解为60进一后取余数，然后只要余数。
 		 
-            timestr = CDay + '天' + CHour + '小时' + CMinute + '分钟' + CSecond + '秒啦！';
-	    timestr2 = years + '年';
+            timestr = CHour + '小时' + CMinute + '分钟' + CSecond + '秒啦！';
+	    timestr2 = years + '年' + CDay + '天';
 
             timeobj.innerHTML = timestr;
 	    yearobj.innerHTML = timestr2;
