@@ -74,7 +74,7 @@ hr.star-light{
   border-color:#fff
 }
 hr.star-light:after{
-  background-color:#DF0101;color:#fff  /*background #18BC9C */
+  background-color:#18BC9C;color:#fff  /*background #18BC9C */
 }
 
 hr.star-primary{
